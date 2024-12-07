@@ -4,6 +4,9 @@ const passport = require('passport');
 const { initPassport } = require('./src/config/passport');
 const errorHandler = require('./src/utils/errorHandler');
 const v1Routes = require('./src/routes/v1');
+const connectDB = require('./src/config/database');
+
+connectDB();
 
 const app = express();
 
