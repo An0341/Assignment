@@ -8,7 +8,7 @@ const router = express.Router();
 // User management routes
 router.get('/', authMiddleware, roleMiddleware(['Admin']), userController.getAllUsers);
 router.get('/:id', authMiddleware, userController.getUserById);
-router.put('/:id', authMiddleware, roleMiddleware(['Admin', 'Moderator']), userController.updateUser);
+router.put('/:id', authMiddleware, roleMiddleware(['Admin']), userController.updateUser);
 router.delete('/:id', authMiddleware, roleMiddleware(['Admin']), userController.deleteUser);
 
 module.exports = router;
