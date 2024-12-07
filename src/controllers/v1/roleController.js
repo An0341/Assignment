@@ -17,3 +17,12 @@ exports.createRole = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.updateRole = async (req, res, next) => {
+  try {
+    const role = await roleService.updateRole(req.params.id, req.body);
+    res.status(200).json(role);
+  } catch (err) {
+    next(err);
+  }
+};

@@ -8,5 +8,6 @@ const router = express.Router();
 // Role management routes
 router.get('/', authMiddleware, roleMiddleware(['Admin']), roleController.getAllRoles);
 router.post('/', authMiddleware, roleMiddleware(['Admin']), roleController.createRole);
+route.put('/:id', authMiddleware, roleMiddleware(['Admin']), roleController.updateRole);
 
 module.exports = router;
